@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react'
 import './App.css';
+import Header from './components/Header'
+import ExpenseForm from './components/ExpenseForm';
+import ExpenseList from './components/expenseList';
 
 function App() {
+  const [expense, setExpense] = useState ([]);
+  const [totalExpenses, setTotalExpenses] = useState (0);
+
+  useEffect(() => {
+    let temp = 0;
+    for (let i = 0; i < expense.length; i++) {
+      temp += parseInt(expense[i].amount);
+    }
+
+    setTotalExpenses(temp);
+  }, [expense]);
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header totalExpenses={totalExpenses}/>
+      <ExpenseForm expense ={expense} setExpense={setExpense}/>
+      <ExpenseList expense ={expense} setExpense={setExpense}/>
     </div>
   );
 }

@@ -1,38 +1,105 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: montserrat, sans-serif;background-color: aquamarine;
+}
+input, button {
+	border: none;
+	outline: none;
+	background: none;
+}
 .App {
-  text-align: center;
+	padding: 25px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+	font-size: 32px;
+	font-weight: 600;
+	text-align: left;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.total-expenses {
+	font-size: 28px;
+	font-weight: 900;
+	background-color: rgb(223, 223, 223);
+	padding: 5px 25px;
+	border-radius: 8px;
 }
-
-.App-link {
-  color: #61dafb;
+.expense-form {
+	display: block;
+	margin: 15px;
+	position: relative;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	transition: 0.4s;
+	border-radius: 8px;
+}
+.form input {
+	font-size: 18px;
+	padding: 10px 10px;
+	background-color: #FFF;
+} 
+.description {
+	border-radius: 8px 0px 0px 8px;
+  flex: 1 1 100%;
+}
+.date {
+	border-radius: 0px;
+	min-width: 200px;
+}
+.submit {
+	border-radius: 0px 8px 8px 0px;
+	cursor: pointer;
+	background-size: 200%;
+	background-position: 0%;
+	font-weight: 600;
+	text-transform: uppercase;
+	transition: 0.4s;
+  background-color: #FFF
+}
+.submit :hover {
+  background-position: 100%;
+	color: white;
+}
+.expense-list {
+	padding: 15px;
+}
+.expense-item {
+	position: relative;
+	padding: 10px 15px;
+	background-color: #FFF;
+	border-radius: 8px;
+	margin-bottom: 15px;
+	display: flex;
+	transition: 0.4s;
+	padding-left: 75px;
+}
+.remove-item {
+	position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+	cursor: pointer;
+	display: block;
+	font-weight: 600;
+	border-radius: 8px 0px 0px 8px;
+	transition: 0.2s;
+  background-color: red;
+	width: 50px;
+}
+.description {
+	flex: 1 1 100%;
+  background-color: #FFF;
+}
+.amount, .date {
+	min-width: 125px;
+  background-color: #FFF;
 }
