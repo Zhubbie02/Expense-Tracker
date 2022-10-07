@@ -3,7 +3,7 @@ import ExpenseItem from './expenseItem';
 
 function ExpenseList ({expense, setExpense}) {
     const removeExpense = i => {
-        let temp = expense.filter ((v, index) => index != i);
+        let temp = expense.filter ((v, index) => index !== i);
         setExpense(temp);
     }
 
